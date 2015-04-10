@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: blue;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button layoutX="259.0" layoutY="225.0" mnemonicParsing="false" style="-fx-background-color: pink;" text="Guest Play" />
+      <Button layoutX="273.0" layoutY="174.0" mnemonicParsing="false" style="-fx-background-color: pink;" text="Log In" />
+      <TextField alignment="CENTER" layoutX="155.0" layoutY="67.0" prefHeight="50.0" prefWidth="290.0" style="-fx-background-color: pink;" text="Trivia">
+         <font>
+            <Font name="American Typewriter Bold" size="26.0" />
+         </font>
+      </TextField>
+   </children>
+</Pane>
