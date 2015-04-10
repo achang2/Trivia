@@ -9,10 +9,10 @@
    <children>
       <Button layoutX="259.0" layoutY="225.0" mnemonicParsing="false" style="-fx-background-color: pink;" text="Guest Play" />
       <Button layoutX="273.0" layoutY="174.0" mnemonicParsing="false" style="-fx-background-color: pink;" text="Log In" />
-      <TextField alignment="CENTER" layoutX="155.0" layoutY="67.0" prefHeight="50.0" prefWidth="290.0" style="-fx-background-color: pink;" text="Trivia">
+      <Label layoutX="233.0" layoutY="74.0" style="-fx-background-color: pink;" text="Trivia">
          <font>
-            <Font name="American Typewriter Bold" size="26.0" />
+            <Font name="American Typewriter" size="46.0" />
          </font>
-      </TextField>
+      </Label>
    </children>
 </Pane>
