@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: blue;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="247.0" layoutY="37.0" style="-fx-background-color: pink;" text="Home">
+         <font>
+            <Font name="American Typewriter" size="36.0" />
+         </font>
+      </Label>
+      <Button layoutX="247.0" layoutY="118.0" mnemonicParsing="false" style="-fx-background-color: pink;" text="New Game">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="254.0" layoutY="175.0" mnemonicParsing="false" style="-fx-background-color: pink;" text="Continue">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="238.0" layoutY="294.0" mnemonicParsing="false" style="-fx-background-color: pink;" text="Back to Main">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="263.0" layoutY="235.0" mnemonicParsing="false" style="-fx-background-color: pink;" text="Profile">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>
