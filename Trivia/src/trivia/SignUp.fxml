@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: blue;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label alignment="CENTER" layoutX="234.0" layoutY="30.0" style="-fx-background-color: pink;" text="Sign Up">
+         <font>
+            <Font name="American Typewriter" size="36.0" />
+         </font>
+      </Label>
+      <PasswordField layoutX="219.0" layoutY="125.0" />
+      <PasswordField layoutX="219.0" layoutY="187.0" />
+      <PasswordField layoutX="219.0" layoutY="258.0" />
+      <Button layoutX="232.0" layoutY="318.0" mnemonicParsing="false" style="-fx-background-color: pink;" text="Create Account">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Label layoutX="270.0" layoutY="102.0" style="-fx-background-color: pink;" text="Username" />
+      <Label layoutX="270.0" layoutY="165.0" style="-fx-background-color: pink;" text="Password" />
+      <Label layoutX="252.0" layoutY="236.0" style="-fx-background-color: pink;" text="Verfiy Password" />
+   </children>
+</Pane>
