@@ -14,5 +14,6 @@
             <Font name="American Typewriter" size="46.0" />
          </font>
       </Label>
+      <Button layoutX="267.0" layoutY="278.0" mnemonicParsing="false" style="-fx-background-color: pink;" text="Sign Up" />
    </children>
 </Pane>
