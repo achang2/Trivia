@@ -5,10 +5,9 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: blue;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="247.0" layoutY="37.0" style="-fx-background-color: pink;" text="Home">
+      <Label layoutX="241.0" layoutY="37.0" style="-fx-background-color: pink;" text=" Home ">
          <font>
             <Font name="American Typewriter" size="36.0" />
          </font>
