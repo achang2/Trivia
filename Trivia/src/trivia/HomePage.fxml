@@ -12,27 +12,22 @@
             <Font name="American Typewriter" size="36.0" />
          </font>
       </Label>
-      <Button layoutX="246.0" layoutY="110.0" mnemonicParsing="false" style="-fx-background-color: pink;" text="New Game">
+      <Button layoutX="246.0" layoutY="132.0" mnemonicParsing="false" style="-fx-background-color: pink;" text="New Game">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <Button layoutX="253.0" layoutY="168.0" mnemonicParsing="false" style="-fx-background-color: pink;" text="Continue">
+      <Button layoutX="253.0" layoutY="184.0" mnemonicParsing="false" style="-fx-background-color: pink;" text="Continue">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <Button layoutX="241.0" layoutY="345.0" mnemonicParsing="false" style="-fx-background-color: pink;" text="Back to Main">
+      <Button layoutX="238.0" layoutY="289.0" mnemonicParsing="false" style="-fx-background-color: pink;" text="Back to Main">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <Button layoutX="263.0" layoutY="228.0" mnemonicParsing="false" style="-fx-background-color: pink;" text="Profile">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Button>
-      <Button layoutX="250.0" layoutY="287.0" mnemonicParsing="false" style="-fx-background-color: pink;" text="Edit Profile">
+      <Button layoutX="263.0" layoutY="239.0" mnemonicParsing="false" style="-fx-background-color: pink;" text="Profile">
          <font>
             <Font size="16.0" />
          </font>
