@@ -12,7 +12,7 @@
             <Font name="American Typewriter" size="36.0" />
          </font>
       </Label>
-      <Button layoutX="235.0" layoutY="136.0" mnemonicParsing="false" style="-fx-background-color: pink;" text="Next Question">
+      <Button layoutX="234.0" layoutY="156.0" mnemonicParsing="false" style="-fx-background-color: pink;" text="Next Question">
          <font>
             <Font name="American Typewriter" size="16.0" />
          </font>
@@ -22,5 +22,6 @@
             <Font name="American Typewriter" size="16.0" />
          </font>
       </Button>
+      <Label layoutX="219.0" layoutY="113.0" style="-fx-background-color: pink;" text="Place Correct Answer Here" />
    </children>
 </Pane>
