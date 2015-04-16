@@ -7,7 +7,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: rgb(90, 90, 245);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: rgb(90, 90, 245);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trivia.OpeningScreenController">
    <children>
       <Button layoutX="225.0" layoutY="228.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: rgb(255,170, 170);" text="Guest Play" />
       <Button layoutX="225.0" layoutY="180.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: rgb(255, 170,170);" text="Log In" />
