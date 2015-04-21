@@ -8,6 +8,8 @@ package trivia;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 
 /**
  * FXML Controller class
@@ -23,5 +25,14 @@ public class BasicQuestionTemplateController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+    Alert alert = new Alert(AlertType.CONFIRMATION);
+    alert.setTitle("How did you do?");
+    alert.setHeaderText("Correct!");
+    alert.setContentText("Good job! You should definitely continue.");
+    ButtonType buttonTypeNext = new ButtonType("Next Question");
+    ButtonType buttonTypeCancel = new ButtonType("Cancel", 
+    ButtonData.CANCEL_CLOSE);
+    alert.getButtonTypes().setAll(buttonTypeNext, buttonTypeCancel);
+    
     
 }
