@@ -1,0 +1,20 @@
+/*
+ * Basic Stylesheet for the entire game.
+ */
+
+.mainFxmlClass {
+    background-color: #ff33ff;
+}
+
+#answerButton {
+    -fx-background-color: #3333ff;
+}
+
+.button {
+    -fx-background-color: #ff3366;
+}
+
+.label {
+    -fx-background-color: #ff33ff;
+
+}
