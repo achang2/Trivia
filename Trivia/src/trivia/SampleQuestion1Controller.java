@@ -16,7 +16,7 @@ import javafx.scene.control.Alert.AlertType;
  *
  * @author Arthur
  */
-public class BasicQuestionTemplateController implements Initializable {
+public class SampleQuestion1Controller implements Initializable {
 
     /**
      * Initializes the controller class.
@@ -25,7 +25,7 @@ public class BasicQuestionTemplateController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-    Alert alert = new Alert(AlertType.CONFIRMATION);
+    /**Alert alert = new Alert(AlertType.CONFIRMATION);
     alert.setTitle("How did you do?");
     alert.setHeaderText("Correct!");
     alert.setContentText("Good job! You should definitely continue.");
@@ -33,6 +33,6 @@ public class BasicQuestionTemplateController implements Initializable {
     ButtonType buttonTypeCancel = new ButtonType("Cancel", 
     ButtonData.CANCEL_CLOSE);
     alert.getButtonTypes().setAll(buttonTypeNext, buttonTypeCancel);
-    
+    */
     
 }
