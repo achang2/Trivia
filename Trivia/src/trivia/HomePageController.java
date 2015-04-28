@@ -22,10 +22,14 @@ public class HomePageController implements Initializable {
     private Label label;
     
     @FXML
+    private button newGame;
+    
+    @FXML
     private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
+        
     }
+    
+ 
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
