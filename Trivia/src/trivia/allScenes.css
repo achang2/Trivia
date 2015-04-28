@@ -15,20 +15,22 @@
 #answer{
     -fx-padding: 10px;
     -fx-background-radius: 10px;
-    -fx-border-color: #6666ff;
-    -fx-border-radius: 10px;
+
 }
 
 .button {
     -fx-background-color: #cc99ff;
 }
 
-#behind{
-   -fx-background-color: #99ffff; 
+Pane{
+   -fx-background-color: #99ffff;   
 }
+
 .label {
     -fx-background-color: #ffffff;
     -fx-background-radius: 10px;
     -fx-padding: 5px;
+    -fx-border-color: #6666ff;
+    -fx-border-radius: 10px;
 
 }
