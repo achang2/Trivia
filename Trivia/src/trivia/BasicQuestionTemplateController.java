@@ -6,10 +6,12 @@
 package trivia;
 
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
 
 /**
  * FXML Controller class
@@ -22,15 +24,45 @@ public class BasicQuestionTemplateController implements Initializable {
      * Initializes the controller class.
      */
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+    public void initialize(URL url, ResourceBundle rb) {     
+ // TODO
+    }  
+    public void correct(){
+        Alert alert = new Alert(AlertType.CONFIRMATION);
+        alert.setTitle("Correct!");
+        alert.setHeaderText("Correct!");
+        alert.setContentText("Congratulations! You got the question correct.");
 
-    }    
-    
+        ButtonType buttonTypeNext = new ButtonType("Next Question");
+        ButtonType buttonTypeBack = new ButtonType("Back to Main");
 
+        alert.getButtonTypes().setAll(buttonTypeNext, buttonTypeBack);
+
+        Optional<ButtonType> result = alert.showAndWait();
+        ButtonType buttonTypeOne;
+        if (result.get() == buttonTypeNext){
+            // switch to the next question page
+        } else {
+            // switch to the main home page
+        } 
     }
+    public void incorrect(){
+        Alert alert = new Alert(AlertType.CONFIRMATION);
+        alert.setTitle("Incorrect.!");
+        alert.setHeaderText("Incorrect.");
+        alert.setContentText("I'm sorry, but that was the wrong answer.");
 
-    
-    
-    
+        ButtonType buttonTypeNext = new ButtonType("Next Question");
+        ButtonType buttonTypeBack = new ButtonType("Back to Main");
 
+        alert.getButtonTypes().setAll(buttonTypeNext, buttonTypeBack);
+
+        Optional<ButtonType> result = alert.showAndWait();
+        ButtonType buttonTypeOne;
+        if (result.get() == buttonTypeNext){
+            // switch to the next question page
+        } else {
+            // switch to the main home page
+        } 
+    }
+}
