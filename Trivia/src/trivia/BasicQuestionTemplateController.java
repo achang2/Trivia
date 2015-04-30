@@ -26,7 +26,13 @@ public class BasicQuestionTemplateController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {     
  // TODO
-    }  
+    }
+    public void check(){
+        /*this method should check to see if the inputted answer is correct.
+        *If the answer is correct, it should call the correct method. 
+        *Otherwise, it should call the incorrect method.
+        */        
+    }
     public void correct(){
         Alert alert = new Alert(AlertType.CONFIRMATION);
         alert.setTitle("Correct!");
