@@ -39,6 +39,7 @@ public class HomePageController implements Initializable {
             a.add(q);
         }
     }
+            
     
     
     @FXML
@@ -47,16 +48,16 @@ public class HomePageController implements Initializable {
          * @author Alec
          */
        File q = new File("Trivia Questions.txt");
-       File c = new File("Correct Answers.txt");
+       File correct = new File("Correct Answers.txt");
        File w1 = new File("Wrong Answers 1.txt");
        File w2 = new File("Wrong Answers 2.txt");
        File w3 = new File("Wrong Answers 3.txt");
        try{
            Scanner myScan = new Scanner(q);
-           ArrayList<String> questions = new ArrayList<String>();
-           scan(myScan, questions);
+           ArrayList<String> ques = new ArrayList<String>();
+           scan(myScan, ques);
            
-           Scanner cor = new Scanner(c);
+           Scanner cor = new Scanner(correct);
            ArrayList<String> correctAnswers = new ArrayList<String>();
            scan(cor, correctAnswers);
            
@@ -70,15 +71,52 @@ public class HomePageController implements Initializable {
            
            Scanner third = new Scanner(w3);
            ArrayList<String> wrong3 = new ArrayList<String>();
-           scan(third,wrong3);
+           scan(third, wrong3);
            
            Random rand = new Random();
-           int i = rand.nextInt(questions.size());
-           String newQ = questions.get(i);
+           int i = rand.nextInt(ques.size());
+           String newQ = ques.get(i);
            String newC = correctAnswers.get(i);
            String newA1 = wrong1.get(i);
            String newA2 = wrong2.get(i);
            String newA3 = wrong3.get(i);
+           
+           Label questions = new Label(newQ);
+           Label labelC = new Label(newC);
+           Label firstL = new Label(newA1);
+           Label secL = new Label(newA2);
+           Label thirdL = new Label(newA3);
+           
+           int n = rand.nextInt(3);
+           
+           if(n == 0){
+               labelC = a;
+               firstL = b;
+               secL = c;
+               thirdL = d;
+           }
+           else if(n == 1){
+               labelC = b;
+               firstL = c;
+               secL = d;
+               thirdL = a;
+           }
+           else if(n == 2){
+               labelC = c;
+               firstL = d;
+               secL = a;
+               thirdL = b;
+           }
+           else if(n == 3){
+               labelC = d;
+               firstL = a;
+               secL = b;
+               thirdL = c;
+           }
+           
+           
+          
+           
            
        }
        catch (FileNotFoundException caught){
