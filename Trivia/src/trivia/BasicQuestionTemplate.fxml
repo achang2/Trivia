@@ -12,15 +12,15 @@
             <Font name="American Typewriter" size="36.0" />
          </font>
       </Label>
-      <Label fx:id="question" layoutX="187.0" layoutY="77.0" prefHeight="62.0" prefWidth="227.0" text="Place the actual question in here" />
+      <Label layoutX="187.0" layoutY="77.0" prefHeight="62.0" prefWidth="227.0" text="Place the actual question in here" />
       <Button layoutX="76.0" layoutY="165.0" mnemonicParsing="false" text="A" />
       <Button layoutX="76.0" layoutY="209.0" mnemonicParsing="false" text="B" />
       <Button layoutX="76.0" layoutY="254.0" mnemonicParsing="false" text="C" />
       <Button layoutX="76.0" layoutY="298.0" mnemonicParsing="false" text="D" />
-      <Label fx:id="a" layoutX="171.0" layoutY="170.0" text="Answer Option A" />
-      <Label fx:id="b" layoutX="171.0" layoutY="214.0" text="Answer Option B" />
-      <Label fx:id="c" layoutX="171.0" layoutY="259.0" text="Answer Option C" />
-      <Label fx:id="d" layoutX="171.0" layoutY="303.0" text="Answer Option D" />
+      <Label layoutX="171.0" layoutY="170.0" text="Answer Option A" />
+      <Label layoutX="171.0" layoutY="214.0" text="Answer Option B" />
+      <Label layoutX="171.0" layoutY="259.0" text="Answer Option C" />
+      <Label layoutX="171.0" layoutY="303.0" text="Answer Option D" />
       <Button layoutX="248.0" layoutY="343.0" mnemonicParsing="false" text="Next Question" />
       <MenuBar layoutX="4.0">
         <menus>
@@ -43,5 +43,3 @@
       </MenuBar>
    </children>
 </Pane>
-
-
