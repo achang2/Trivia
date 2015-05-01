@@ -16,7 +16,7 @@ import javafx.scene.control.Alert.AlertType;
  *
  * @author Arthur
  */
-public class BasicQuestionTemplateController implements Initializable {
+public class SampleQuestion1Controller implements Initializable {
 
     /**
      * Initializes the controller class.
