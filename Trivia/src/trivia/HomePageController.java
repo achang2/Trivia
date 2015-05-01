@@ -24,7 +24,19 @@ import javafx.scene.control.Label;
 public class HomePageController implements Initializable {
     
     @FXML
-    private Label label;
+    private Label question;
+    
+    @FXML
+    private Label a;
+    
+    @FXML
+    private Label b;
+    
+    @FXML
+    private Label c;
+    
+    @FXML
+    private Label d;
     
     @FXML
     private button newGame;
