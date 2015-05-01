@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: blue;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="248.0" layoutY="38.0" style="-fx-background-color: pink;" text="Hello!">
+         <font>
+            <Font name="American Typewriter" size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="138.0" layoutY="105.0" prefHeight="21.0" prefWidth="325.0" style="-fx-background-color: pink;" text=" Welcome to Trivia, a fun and interactive quiz website! " />
+      <Label layoutX="130.0" layoutY="126.0" prefHeight="21.0" prefWidth="341.0" style="-fx-background-color: pink;" text=" To continue to your homepage, click the &quot;Home&quot; button." />
+      <Button layoutX="264.0" layoutY="200.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="72.0" style="-fx-background-color: pink;" text="Home">
+         <font>
+            <Font name="American Typewriter" size="16.0" />
+         </font>
+      </Button>
+      <Label layoutX="115.0" layoutY="147.0" prefHeight="21.0" prefWidth="371.0" style="-fx-background-color: pink;" text=" To go back to the main menu, press the &quot;Main Menu&quot; button." />
+      <Button layoutX="246.0" layoutY="259.0" mnemonicParsing="false" style="-fx-background-color: pink;" text="Main Menu">
+         <font>
+            <Font name="American Typewriter" size="16.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>
