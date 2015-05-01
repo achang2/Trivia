@@ -44,8 +44,6 @@ public class HomePageController implements Initializable, ControlledScreen {
     private Label d;
     
     @FXML
-    private Button newGame;
-    @FXML
     /**
      * @author Alec
      */
