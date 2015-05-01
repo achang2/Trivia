@@ -17,7 +17,8 @@
          </font>
       </Label>
 
-      <Label fx:id="questions" alignment="CENTER" layoutX="165.0" layoutY="100.0" prefHeight="75.0" prefWidth="270.0" text="Place the actual question in here" />
+      <Label fx:id="question" alignment="CENTER" layoutX="165.0" layoutY="100.0" prefHeight="75.0" prefWidth="270.0" text="Place the actual question in here" />
+      <Label alignment="CENTER" layoutX="165.0" layoutY="100.0" prefHeight="75.0" prefWidth="270.0" text="Place the actual question in here" />
       <Button layoutX="48.0" layoutY="32.0" mnemonicParsing="false" text="Back to Main" />
       <GridPane alignment="CENTER" layoutX="50.0" layoutY="180.0" prefHeight="200.0" prefWidth="500.0">
         <columnConstraints>
