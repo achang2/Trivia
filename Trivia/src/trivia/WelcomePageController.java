@@ -7,6 +7,8 @@ package trivia;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
 /**
@@ -14,14 +16,26 @@ import javafx.fxml.Initializable;
  *
  * @author Arthur
  */
-public class WelcomePageController implements Initializable {
+public class WelcomePageController implements Initializable, ControlledScreen {
 
     /**
      * Initializes the controller class.
      */
+    ScreensController myController;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
     
+    @Override
+    public void setScreenParent(ScreensController screenParent) { 
+        myController = screenParent; 
+    } 
+
+    @FXML
+    private void goToHomePage(ActionEvent event) {
+        myController.setScreen(Trivia.Home_Page);
+        System.out.println("changing screen to home page!");
+    }
 }
