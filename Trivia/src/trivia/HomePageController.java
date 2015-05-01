@@ -30,6 +30,8 @@ public class HomePageController implements Initializable, ControlledScreen {
     private Label question;
     
     @FXML
+    private button newGame;
+            
     private Label a;
     
     @FXML
