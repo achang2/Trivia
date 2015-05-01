@@ -11,16 +11,20 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.control.Button;
 
 /**
  *
  * @author Arthur
  */
-public class HomePageController implements Initializable {
+public class HomePageController implements Initializable, ControlledScreen {
+    
+    ScreensController myController;
     
     @FXML
     private Label label;
-    
+    @FXML
+    private Button newGame;
     @FXML
     private void handleButtonAction(ActionEvent event) {
         System.out.println("You clicked me!");
@@ -30,6 +34,11 @@ public class HomePageController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
+    
+    @Override
+    public void setScreenParent(ScreensController screenParent){ 
+        myController = screenParent; 
+    } 
     
 }

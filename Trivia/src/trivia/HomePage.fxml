@@ -12,7 +12,7 @@
             <Font name="American Typewriter" size="36.0" />
          </font>
       </Label>
-      <Button layoutX="246.0" layoutY="132.0" mnemonicParsing="false" style="-fx-background-color: pink;" text="New Game">
+      <Button fx:id="newGame" layoutX="246.0" layoutY="132.0" mnemonicParsing="false" onAction="#handleButtonAction" style="-fx-background-color: pink;" text="New Game">
          <font>
             <Font size="16.0" />
          </font>
