@@ -125,9 +125,7 @@ public class BasicQuestionTemplateController implements Initializable {
                thirdL = c;
            }
            
-           
-          
-           
+ 
            
        }
        catch (FileNotFoundException caught){
@@ -138,7 +136,7 @@ public class BasicQuestionTemplateController implements Initializable {
     }    
     
 
-    }
+    
 
     
     
