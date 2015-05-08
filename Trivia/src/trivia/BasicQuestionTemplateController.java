@@ -10,10 +10,12 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.ResourceBundle;
 import java.util.Scanner;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 /**
@@ -38,7 +40,18 @@ public class BasicQuestionTemplateController implements Initializable {
    @FXML 
    private Label d;
    
-    
+   @FXML
+   private Button answerA;
+   
+   @FXML
+   private Button answerB;
+   
+   @FXML
+   private Button answerC;
+   
+   @FXML
+   private Button answerD; 
+   
     /**
      * @author Alec
      * @param s
@@ -59,11 +72,14 @@ public class BasicQuestionTemplateController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {     
  // TODO
     }
-    public void check(){
-        /*this method should check to see if the inputted answer is correct.
-        *If the answer is correct, it should call the correct method. 
-        *Otherwise, it should call the incorrect method.
-        */        
+
+    /**
+     *
+     * @param button
+     */
+    @FXML
+    public void check(ActionEvent button){
+             
     }
     public void correct(){
         Alert alert = new Alert(AlertType.CONFIRMATION);
