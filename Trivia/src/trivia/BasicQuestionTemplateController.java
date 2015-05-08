@@ -164,5 +164,4 @@ public class BasicQuestionTemplateController implements Initializable {
             // switch to the next question page
         } else {
             // switch to the main home page
-        } 
-    }*/
+        }*/ 
