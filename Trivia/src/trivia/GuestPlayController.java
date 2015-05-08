@@ -14,7 +14,7 @@ import javafx.fxml.Initializable;
  *
  * @author Arthur
  */
-public class LoginController implements Initializable {
+public class GuestPlayController implements Initializable {
 
     /**
      * Initializes the controller class.
