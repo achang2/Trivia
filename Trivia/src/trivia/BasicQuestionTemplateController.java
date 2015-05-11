@@ -5,6 +5,8 @@
  */
 package trivia;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Optional;
@@ -61,6 +63,11 @@ public class BasicQuestionTemplateController implements Initializable {
      * @author Alec
      * @param s
      * @param a
+=======
+    
+    /**
+     * @author Alec
+>>>>>>> origin/master
      */
     public void scan(Scanner s, ArrayList<String> a){
         while(s.hasNext()){
@@ -74,9 +81,90 @@ public class BasicQuestionTemplateController implements Initializable {
      * @param rb
      */
     @Override
-    public void initialize(URL url, ResourceBundle rb) {     
- // TODO
+    
+    public void initialize(URL url, ResourceBundle rb) {
+        /**
+         * @author Alec
+         */
+       File q = new File("Trivia Questions.txt");
+       File correct = new File("Correct Answers.txt");
+       File w1 = new File("Wrong Answers 1.txt");
+       File w2 = new File("Wrong Answers 2.txt");
+       File w3 = new File("Wrong Answers 3.txt");
+       try{
+           Scanner myScan = new Scanner(q);
+           ArrayList<String> ques = new ArrayList<>();
+           scan(myScan, ques);
+           
+           Scanner cor = new Scanner(correct);
+           ArrayList<String> correctAnswers = new ArrayList<>();
+           scan(cor, correctAnswers);
+           
+           Scanner first = new Scanner(w1);
+           ArrayList<String> wrong1 = new ArrayList<>();
+           scan(first, wrong1);
+           
+           Scanner sec = new Scanner(w2);
+           ArrayList<String> wrong2 = new ArrayList<>();
+           scan(sec, wrong2);
+           
+           Scanner third = new Scanner(w3);
+           ArrayList<String> wrong3 = new ArrayList<>();
+           scan(third, wrong3);
+           
+           Random rand = new Random();
+           int i = rand.nextInt(ques.size());
+           String newQ = ques.get(i);
+           String newC = correctAnswers.get(i);
+           String newA1 = wrong1.get(i);
+           String newA2 = wrong2.get(i);
+           String newA3 = wrong3.get(i);
+           
+           questions = new Label(newQ);
+           labelC = new Label(newC);
+           Label firstL = new Label(newA1);
+           Label secL = new Label(newA2);
+           Label thirdL = new Label(newA3);
+           
+           n = rand.nextInt(3);
+           
+           if(n == 0){
+               labelC = a;
+               firstL = b;
+               secL = c;
+               thirdL = d;
+           }
+           else if(n == 1){
+               labelC = b;
+               firstL = c;
+               secL = d;
+               thirdL = a;
+           }
+           else if(n == 2){
+               labelC = c;
+               firstL = d;
+               secL = a;
+               thirdL = b;
+           }
+           else if(n == 3){
+               labelC = d;
+               firstL = a;
+               secL = b;
+               thirdL = c;
+           }
+           
+ 
+           
+       }
+       catch (FileNotFoundException caught){
+           System.out.println("The file does not exist");
+       }
     }
+
+        
+    
+
+    
 
     /**
      *
