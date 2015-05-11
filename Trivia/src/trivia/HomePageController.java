@@ -16,7 +16,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-import javafx.scene.control.Button;
 
 /**
  *
@@ -68,23 +67,23 @@ public class HomePageController implements Initializable, ControlledScreen {
        File w3 = new File("Wrong Answers 3.txt");
        try{
            Scanner myScan = new Scanner(q);
-           ArrayList<String> ques = new ArrayList<String>();
+           ArrayList<String> ques = new ArrayList<>();
            scan(myScan, ques);
            
            Scanner cor = new Scanner(correct);
-           ArrayList<String> correctAnswers = new ArrayList<String>();
+           ArrayList<String> correctAnswers = new ArrayList<>();
            scan(cor, correctAnswers);
            
            Scanner first = new Scanner(w1);
-           ArrayList<String> wrong1 = new ArrayList<String>();
+           ArrayList<String> wrong1 = new ArrayList<>();
            scan(first, wrong1);
            
            Scanner sec = new Scanner(w2);
-           ArrayList<String> wrong2 = new ArrayList<String>();
+           ArrayList<String> wrong2 = new ArrayList<>();
            scan(sec, wrong2);
            
            Scanner third = new Scanner(w3);
-           ArrayList<String> wrong3 = new ArrayList<String>();
+           ArrayList<String> wrong3 = new ArrayList<>();
            scan(third, wrong3);
            
            Random rand = new Random();

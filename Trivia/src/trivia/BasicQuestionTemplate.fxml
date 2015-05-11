@@ -32,10 +32,10 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button id="answerButton" mnemonicParsing="false" text="A" />
-            <Button id="answerButton" mnemonicParsing="false" text="B" GridPane.rowIndex="1" />
-            <Button id="answerButton" mnemonicParsing="false" text="C" GridPane.rowIndex="2" />
-            <Button id="answerButton" mnemonicParsing="false" text="D" GridPane.rowIndex="3" />
+            <Button id="answerButton" fx:id="answerA" mnemonicParsing="false" text="A" />
+            <Button id="answerButton" fx:id="answerB" mnemonicParsing="false" text="B" GridPane.rowIndex="1" />
+            <Button id="answerButton" fx:id="answerC" mnemonicParsing="false" text="C" GridPane.rowIndex="2" />
+            <Button id="answerButton" fx:id="answerD" mnemonicParsing="false" text="D" GridPane.rowIndex="3" />
             <Label id="answer" prefHeight="40.0" prefWidth="10000.0" text="Answer Option A" GridPane.columnIndex="1" />
             <Label id="answer" prefHeight="40.0" prefWidth="10000.0" text="Answer Option B" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <Label id="answer" prefHeight="40.0" prefWidth="10000.0" text="Answer Option C" GridPane.columnIndex="1" GridPane.rowIndex="2" />
