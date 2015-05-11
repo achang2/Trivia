@@ -52,6 +52,9 @@ public class BasicQuestionTemplateController implements Initializable {
    @FXML
    private Button answerD; 
    
+   Label labelC = null;
+   
+   int n;
     /**
      * @author Alec
      * @param s
@@ -79,7 +82,15 @@ public class BasicQuestionTemplateController implements Initializable {
      */
     @FXML
     public void check(ActionEvent button){
-             
+        if(button.getSource() == answerA){
+            
+        }else if(button.getSource() == answerB){
+            
+        }else if(button.getSource() == answerC){
+            
+        }else if(button.getSource() == answerD){
+            
+        }
     }
     public void correct(){
         Alert alert = new Alert(AlertType.CONFIRMATION);
@@ -114,12 +125,12 @@ public class BasicQuestionTemplateController implements Initializable {
         String newA2 = wrong2.get(i);
         String newA3 = wrong3.get(i);
         Label question = new Label(newQ);
-        Label labelC = new Label(newC);
+        labelC = new Label(newC);
         Label firstL = new Label(newA1);
         Label secL;
         secL = new Label(newA2);
         Label thirdL = new Label(newA3);
-        int n = rand.nextInt(3);
+        n = rand.nextInt(3);
         if(n == 0){
             labelC = a;
             firstL = b;
