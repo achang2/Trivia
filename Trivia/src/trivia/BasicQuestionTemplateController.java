@@ -101,28 +101,28 @@ public class BasicQuestionTemplateController implements Initializable {
            int n = rand.nextInt(3);
            
            if(n == 0){
-               labelC = a;
-               firstL = b;
-               secL = c;
-               thirdL = d;
+               a = labelC;
+               b = firstL;
+               c = secL;
+               d = thirdL;
            }
            else if(n == 1){
-               labelC = b;
-               firstL = c;
-               secL = d;
-               thirdL = a;
+               b = labelC;
+               c = firstL;
+               d = secL;
+               a = thirdL;
            }
            else if(n == 2){
-               labelC = c;
-               firstL = d;
-               secL = a;
-               thirdL = b;
+               c = labelC;
+               d = firstL;
+               a = secL;
+               b = thirdL;
            }
            else if(n == 3){
-               labelC = d;
-               firstL = a;
-               secL = b;
-               thirdL = c;
+               d = labelC;
+               a = firstL;
+               b = secL;
+               c = thirdL;
            }
            
  
