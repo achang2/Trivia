@@ -7,6 +7,7 @@ package trivia;
 
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Optional;
 import java.util.Random;
 import java.util.ResourceBundle;
 import java.util.Scanner;
@@ -16,6 +17,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 
 /**
@@ -83,13 +85,29 @@ public class BasicQuestionTemplateController implements Initializable {
     @FXML
     public void check(ActionEvent button){
         if(button.getSource() == answerA){
-            
+            if(n==0){
+               this.correct(); 
+            }else{
+               this.incorrect(); 
+            }
         }else if(button.getSource() == answerB){
-            
+            if(n==1){
+               this.correct();
+            }else{
+                this.incorrect();
+            }
         }else if(button.getSource() == answerC){
-            
+            if(n==2){
+                this.correct();
+            }else{
+                this.incorrect();
+            }
         }else if(button.getSource() == answerD){
-            
+            if(n==3){
+               this.correct(); 
+            }else{
+               this.incorrect(); 
+            }
         }
     }
     public void correct(){
@@ -156,13 +174,13 @@ public class BasicQuestionTemplateController implements Initializable {
             thirdL = c;
            }
     }
+    public void incorrect(){
+        Alert alert = new Alert(AlertType.CONFIRMATION);
+        alert.setTitle("Incorrect.!");
+        alert.setHeaderText("Incorrect.");
+        alert.setContentText("I'm sorry, but that was the wrong answer.");
 
-    }    
-    
-
-    
-
-       /* ButtonType buttonTypeNext = new ButtonType("Next Question");
+        ButtonType buttonTypeNext = new ButtonType("Next Question");
         ButtonType buttonTypeBack = new ButtonType("Back to Main");
 
         alert.getButtonTypes().setAll(buttonTypeNext, buttonTypeBack);
@@ -173,14 +191,15 @@ public class BasicQuestionTemplateController implements Initializable {
             // switch to the next question page
         } else {
             // switch to the main home page
-        }*/ 
-    /*public void incorrect(){
-        Alert alert = new Alert(AlertType.CONFIRMATION);
-        alert.setTitle("Incorrect.!");
-        alert.setHeaderText("Incorrect.");
-        alert.setContentText("I'm sorry, but that was the wrong answer.");
+        }
+    }
 
-        ButtonType buttonTypeNext = new ButtonType("Next Question");
+}    
+    
+
+    
+
+       /* ButtonType buttonTypeNext = new ButtonType("Next Question");
         ButtonType buttonTypeBack = new ButtonType("Back to Main");
 
         alert.getButtonTypes().setAll(buttonTypeNext, buttonTypeBack);
