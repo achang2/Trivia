@@ -1,5 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
+/* To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
@@ -13,6 +12,8 @@ import java.util.Optional;
 import java.util.Random;
 import java.util.ResourceBundle;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -59,29 +60,13 @@ public class BasicQuestionTemplateController implements Initializable {
    Label labelC = null;
    
    int n;
+    private File w2;
     /**
      * @author Alec
-     * @param s
-     * @param a
-=======
-    
-    /**
-     * @author Alec
->>>>>>> origin/master
-     */
-    public void scan(Scanner s, ArrayList<String> a){
-        while(s.hasNext()){
-            String q = s.next();
-            a.add(q);
-        }
-    } 
-    /**
-     * Initializes the controller class.
      * @param url
      * @param rb
-     */
-    @Override
-    
+     * @author Alec*/
+   @Override
     public void initialize(URL url, ResourceBundle rb) {
         /**
          * @author Alec
@@ -89,26 +74,51 @@ public class BasicQuestionTemplateController implements Initializable {
        File q = new File("Trivia Questions.txt");
        File correct = new File("Correct Answers.txt");
        File w1 = new File("Wrong Answers 1.txt");
-       File w2 = new File("Wrong Answers 2.txt");
+       File w2 = null;
        File w3 = new File("Wrong Answers 3.txt");
-       try{
-           Scanner myScan = new Scanner(q);
+       Scanner myScan = null;
+        
+       try {
+            myScan = new Scanner(q);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(BasicQuestionTemplateController.class.getName()).log(Level.SEVERE, null, ex);
+        }
            ArrayList<String> ques = new ArrayList<>();
            scan(myScan, ques);
            
-           Scanner cor = new Scanner(correct);
+           Scanner cor = null;
+        try {
+            cor = new Scanner(correct);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(BasicQuestionTemplateController.class.getName()).log(Level.SEVERE, null, ex);
+        }
            ArrayList<String> correctAnswers = new ArrayList<>();
            scan(cor, correctAnswers);
            
-           Scanner first = new Scanner(w1);
+           Scanner first = null;
+        try {
+            first = new Scanner(w1);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(BasicQuestionTemplateController.class.getName()).log(Level.SEVERE, null, ex);
+        }
            ArrayList<String> wrong1 = new ArrayList<>();
            scan(first, wrong1);
            
-           Scanner sec = new Scanner(w2);
+           Scanner sec = null;
+        try {
+            sec = new Scanner(w2);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(BasicQuestionTemplateController.class.getName()).log(Level.SEVERE, null, ex);
+        }
            ArrayList<String> wrong2 = new ArrayList<>();
            scan(sec, wrong2);
            
-           Scanner third = new Scanner(w3);
+           Scanner third = null;
+        try {
+            third = new Scanner(w3);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(BasicQuestionTemplateController.class.getName()).log(Level.SEVERE, null, ex);
+        }
            ArrayList<String> wrong3 = new ArrayList<>();
            scan(third, wrong3);
            
@@ -129,37 +139,39 @@ public class BasicQuestionTemplateController implements Initializable {
            n = rand.nextInt(3);
            
            if(n == 0){
-               labelC = a;
-               firstL = b;
-               secL = c;
-               thirdL = d;
+               a = labelC;
+               b = firstL;
+               c = secL;
+               d = thirdL;
            }
            else if(n == 1){
-               labelC = b;
-               firstL = c;
-               secL = d;
-               thirdL = a;
+               b = labelC;
+               c = firstL;
+               d = secL;
+               a = thirdL;
            }
            else if(n == 2){
-               labelC = c;
-               firstL = d;
-               secL = a;
-               thirdL = b;
+               c = labelC;
+               d = firstL;
+               a = secL;
+               b = thirdL;
            }
            else if(n == 3){
-               labelC = d;
-               firstL = a;
-               secL = b;
-               thirdL = c;
+               d = labelC;
+               a = firstL;
+               b = secL;
+               c = thirdL;
            }
            
  
-           
-       }
-       catch (FileNotFoundException caught){
-           System.out.println("The file does not exist");
-       }
     }
+    public BasicQuestionTemplateController() {
+        this.w2 = new File("Wrong Answers 2.txt");
+    }
+
+    private void scan(Scanner myScan, ArrayList<String> ques) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }    
 
         
     
@@ -169,9 +181,10 @@ public class BasicQuestionTemplateController implements Initializable {
     /**
      *
      * @param button
+     * @throws java.io.FileNotFoundException
      */
     @FXML
-    public void check(ActionEvent button){
+    public void check(ActionEvent button) throws FileNotFoundException{
         if(button.getSource() == answerA){
             if(n==0){
                this.correct(); 
@@ -198,29 +211,29 @@ public class BasicQuestionTemplateController implements Initializable {
             }
         }
     }
-    public void correct(){
+    public void correct() throws FileNotFoundException{
         Alert alert = new Alert(AlertType.CONFIRMATION);
         alert.setTitle("Correct!");
         alert.setHeaderText("Correct!");
         alert.setContentText("Congratulations! You got the question correct.");
-        Readable q = null;
-        Scanner myScan = new Scanner(q);
+       Object q = null;
+        Scanner myScan = new Scanner((Readable) q);
         ArrayList<String> ques = new ArrayList<>();
         scan(myScan, ques);
-        Readable correct = null;
-        Scanner cor = new Scanner(correct);
+       Object correct = null;
+        Scanner cor = new Scanner((Readable) correct);
         ArrayList<String> correctAnswers = new ArrayList<>();
         scan(cor, correctAnswers);
-        Readable w1 = null;
-        Scanner first = new Scanner(w1);
+       Readable w1 = null;
+       Scanner first = new Scanner(w1);
         ArrayList<String> wrong1 = new ArrayList<>();
         scan(first, wrong1);
-        Readable w2 = null;
+        w2 = null;
         Scanner sec = new Scanner(w2);
         ArrayList<String> wrong2 = new ArrayList<>();
         scan(sec, wrong2);
-        Readable w3 = null;
-        Scanner third = new Scanner(w3);
+       Object w3 = null;
+        Scanner third = new Scanner((Readable) w3);
         ArrayList<String> wrong3 = new ArrayList<>();
         scan(third, wrong3);
         Random rand = new Random();
@@ -281,8 +294,8 @@ public class BasicQuestionTemplateController implements Initializable {
             // switch to the main home page
         }
     }
-
-}    
+}
+    
     
 
     
