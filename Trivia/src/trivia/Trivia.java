@@ -17,9 +17,7 @@ import javafx.stage.Stage;
  * @author Arthur
  */
 public class Trivia extends Application {
-    
-     public static final String Welcome_Page = "Welcome Page"; 
-     public static final String Welcome_Page_FXML = "WelcomePage.fxml"; 
+     
      public static final String Title_Page = "Title Page"; 
      public static final String Title_Page_FXML = "TitlePage.fxml"; 
      public static final String Home_Page = "Home Page"; 
@@ -31,14 +29,14 @@ public class Trivia extends Application {
      public void start(Stage primaryStage) { 
 
        ScreensController mainContainer = new ScreensController(); 
-       mainContainer.loadScreen(Trivia.Welcome_Page, 
-                            Trivia.Welcome_Page_FXML); 
+       mainContainer.loadScreen(Trivia.Home_Page, 
+                            Trivia.Home_Page_FXML); 
        mainContainer.loadScreen(Trivia.Title_Page, 
                             Trivia.Title_Page_FXML); 
        mainContainer.loadScreen(Trivia.Home_Page, 
                             Trivia.Home_Page_FXML); 
 
-       mainContainer.setScreen(Trivia.Welcome_Page); 
+       mainContainer.setScreen(Trivia.Home_Page); 
 
        Group root = new Group(); 
        root.getChildren().addAll(mainContainer); 
