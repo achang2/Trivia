@@ -83,6 +83,7 @@ import javafx.stage.Stage;
 package trivia;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 //import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 //import javafx.scene.Parent;
@@ -101,10 +102,12 @@ public class Trivia extends Application {
      public static final String Home_Page_FXML = "HomePage.fxml"; 
      public static final String ROULETTE_SCREEN = "roulette"; 
      public static final String ROULETTE_SCREEN_FXML = "roulette.fxml"; 
-    
+     public static final String Basic_Question_Template = "Basic Question Template";
+     public static final String Basic_Question_Template_FXML = "BasicQuestionTemplate.fxml";
+     public static Stage firstStage;
     @Override
      public void start(Stage primaryStage) { 
-
+       firstStage = primaryStage;
        ScreensController mainContainer = new ScreensController(); 
        mainContainer.loadScreen(Trivia.Home_Page, 
                             Trivia.Home_Page_FXML); 
@@ -121,6 +124,24 @@ public class Trivia extends Application {
        primaryStage.setScene(scene); 
        primaryStage.show();
     }
+
+    /**
+     *
+     * @param secondStage
+     */
+    public static void switchScene(){
+         ScreensController mainContainer;
+         mainContainer = new ScreensController();
+         mainContainer.loadScreen(Trivia.Basic_Question_Template,
+                                  Trivia.Basic_Question_Template_FXML);
+         mainContainer.setScreen(Trivia.Basic_Question_Template);
+         
+        Group root = new Group(); 
+        root.getChildren().addAll(mainContainer); 
+        Scene scene = new Scene(root); 
+        firstStage.setScene(scene); 
+        firstStage.show();
+     }
 
     /**
      * @param args the command line arguments
