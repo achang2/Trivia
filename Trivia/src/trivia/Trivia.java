@@ -82,10 +82,13 @@ import javafx.stage.Stage;
  */
 package trivia;
 
+import java.net.URL;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 //import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
+import javafx.scene.Parent;
 //import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -106,8 +109,9 @@ public class Trivia extends Application {
      public static final String Basic_Question_Template_FXML = "BasicQuestionTemplate.fxml";
      public static Stage firstStage;
     @Override
-     public void start(Stage primaryStage) { 
+     public void start(Stage primaryStage) throws Exception { 
        firstStage = primaryStage;
+       /*
        ScreensController mainContainer = new ScreensController(); 
        mainContainer.loadScreen(Trivia.Home_Page, 
                             Trivia.Home_Page_FXML); 
@@ -117,12 +121,20 @@ public class Trivia extends Application {
                             Trivia.Home_Page_FXML); 
 
        mainContainer.setScreen(Trivia.Home_Page); 
-
+       */
+/*
        Group root = new Group(); 
        root.getChildren().addAll(mainContainer); 
        Scene scene = new Scene(root); 
        primaryStage.setScene(scene); 
        primaryStage.show();
+*/     
+        URL path = getClass().getResource("HomePage.fxml");
+        Parent root = FXMLLoader.load(path);
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+
     }
 
     /**
