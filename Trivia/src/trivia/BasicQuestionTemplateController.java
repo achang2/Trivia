@@ -151,7 +151,10 @@ public class BasicQuestionTemplateController implements Initializable {
     }
 
     private void scan(Scanner myScan, ArrayList<String> ques) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        while(myScan.hasNext()){
+               String questions = myScan.next();
+               ques.add(questions);
+           }
     }    
 
         
