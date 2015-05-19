@@ -5,6 +5,7 @@
  */
 package trivia;
 
+import java.net.URL;
 import java.util.HashMap;
 import javafx.animation.Timeline;
 import javafx.event.EventHandler;
@@ -27,6 +28,7 @@ public class ScreensController extends StackPane {
 
     public boolean loadScreen(String name, String resource) {
         try {
+            URL path = getClass().getResource(resource);
             FXMLLoader myLoader 
                     = new FXMLLoader(getClass().getResource(resource));
             Parent loadScreen = (Parent) myLoader.load();
