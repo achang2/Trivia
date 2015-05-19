@@ -6,6 +6,14 @@
     background-color: #ff33ff;
 }
 
+.text{
+    -fx-font-family: Arial;
+}
+
+#headLine{
+    -fx-font-size: 20px;
+    -fx-font-style: italic; 
+}
 #answerButton {
     -fx-background-color: #6666ff;
     -fx-font-size: 20px;
