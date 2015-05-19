@@ -75,7 +75,7 @@ public class BasicQuestionTemplateController implements Initializable {
        InputStream q = getClass().getResourceAsStream("Trivia Questions.txt");
        InputStream correct = getClass().getResourceAsStream("Correct Answers.txt");
        InputStream w1 = getClass().getResourceAsStream("Wrong Answers 1.txt");
-       InputStream w2 = null;
+       InputStream w2 = getClass().getResourceAsStream("Wrong Answers 2.txt");
        InputStream w3 = getClass().getResourceAsStream("Wrong Answers 3.txt");
        Scanner myScan = null;
         
