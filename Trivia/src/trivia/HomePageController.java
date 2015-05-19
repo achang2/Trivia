@@ -32,17 +32,32 @@ public class HomePageController implements Initializable, ControlledScreen {
     @FXML
     private Button newGame;
             
-    private Label a;
-    
     @FXML
-    private Label b;
-    
-    @FXML
-    private Label c;
-    
-    @FXML
-    private Label d;
+    /**
+     * @author Alec
+     */
+    public void scan(Scanner s, ArrayList<String> a){
+        while(s.hasNext()){
+            String q = s.next();
+            a.add(q);
+        }
+    }
             
+    
+    
+    @FXML
+    private void handleNewGame(ActionEvent event) {
+        Trivia.switchScene();
+    }
+           
+           
+          
+           
+           
+
+       
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -53,4 +68,5 @@ public class HomePageController implements Initializable, ControlledScreen {
         myController = screenParent; 
     } 
     
-}
+}    
+
