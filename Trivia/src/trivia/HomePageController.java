@@ -58,16 +58,17 @@ public class HomePageController implements Initializable, ControlledScreen {
        
     
     
-/*    @Override
+    @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }
-}
+
     
     @Override
     public void setScreenParent(ScreensController screenParent){ 
         myController = screenParent; 
     } 
     
-}    
+}  
+
 
