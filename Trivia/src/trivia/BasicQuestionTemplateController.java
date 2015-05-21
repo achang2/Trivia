@@ -19,7 +19,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Alert.AlertType;                      
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
@@ -29,7 +29,9 @@ import javafx.scene.control.Label;
  *
  * @author Arthur
  */
-public class BasicQuestionTemplateController implements Initializable {
+public class BasicQuestionTemplateController implements Initializable, ControlledScreen {
+    
+    ScreensController myController;
     
    @FXML 
    private Label questions;
@@ -67,6 +69,11 @@ public class BasicQuestionTemplateController implements Initializable {
      * @param url
      * @param rb
      * @author Alec*/
+    
+    @Override
+    public void setScreenParent(ScreensController screenParent){ 
+        myController = screenParent; 
+    }
    @Override
     public void initialize(URL url, ResourceBundle rb) {
         /**
@@ -104,44 +111,40 @@ public class BasicQuestionTemplateController implements Initializable {
            scan(third, wrong3);
            
            Random rand = new Random();
-           int i = rand.nextInt(ques.size());
+           int i = rand.nextInt(ques.size() - 1);
            String newQ = ques.get(i);
            String newC = correctAnswers.get(i);
            String newA1 = wrong1.get(i);
            String newA2 = wrong2.get(i);
            String newA3 = wrong3.get(i);
            
-           questions = new Label(newQ);
-           labelC = new Label(newC);
-           Label firstL = new Label(newA1);
-           Label secL = new Label(newA2);
-           Label thirdL = new Label(newA3);
+           questions.setText(newQ);
            
            n = rand.nextInt(3);
            
            if(n == 0){
-               a = labelC;
-               b = firstL;
-               c = secL;
-               d = thirdL;
+               a.setText(newC);
+               b.setText(newA1);
+               c.setText(newA2);
+               d.setText(newA3);
            }
            else if(n == 1){
-               b = labelC;
-               c = firstL;
-               d = secL;
-               a = thirdL;
+               a.setText(newA3);
+               b.setText(newC);
+               c.setText(newA1);
+               d.setText(newA2);
            }
            else if(n == 2){
-               c = labelC;
-               d = firstL;
-               a = secL;
-               b = thirdL;
+               a.setText(newA2);
+               b.setText(newA3);
+               c.setText(newC);
+               d.setText(newA1);
            }
            else if(n == 3){
-               d = labelC;
-               a = firstL;
-               b = secL;
-               c = thirdL;
+               a.setText(newA1);
+               b.setText(newA2);
+               c.setText(newA3);
+               d.setText(newC);
            }
            
  
@@ -152,7 +155,7 @@ public class BasicQuestionTemplateController implements Initializable {
 
     private void scan(Scanner myScan, ArrayList<String> ques) {
         while(myScan.hasNext()){
-               String questions = myScan.next();
+               String questions = myScan.nextLine();
                ques.add(questions);
            }
     }    
