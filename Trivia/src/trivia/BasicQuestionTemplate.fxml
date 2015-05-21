@@ -18,7 +18,7 @@
       </Label>
 
       <Label fx:id="question" alignment="CENTER" layoutX="165.0" layoutY="100.0" prefHeight="75.0" prefWidth="270.0" text="Place the actual question in here" />
-      <Label alignment="CENTER" layoutX="165.0" layoutY="100.0" prefHeight="75.0" prefWidth="270.0" text="Place the actual question in here" />
+      <Label fx:id="questions" alignment="CENTER" layoutX="165.0" layoutY="100.0" prefHeight="75.0" prefWidth="270.0" text="Place the actual question in here" />
       <Button layoutX="48.0" layoutY="32.0" mnemonicParsing="false" text="Back to Main" />
       <GridPane alignment="CENTER" layoutX="50.0" layoutY="180.0" prefHeight="200.0" prefWidth="500.0">
         <columnConstraints>
@@ -36,10 +36,10 @@
             <Button id="answerButton" fx:id="answerB" mnemonicParsing="false" onAction="#check" text="B" GridPane.rowIndex="1" />
             <Button id="answerButton" fx:id="answerC" mnemonicParsing="false" onAction="#check" text="C" GridPane.rowIndex="2" />
             <Button id="answerButton" fx:id="answerD" mnemonicParsing="false" onAction="#check" text="D" GridPane.rowIndex="3" />
-            <Label id="answer" prefHeight="40.0" prefWidth="10000.0" text="Answer Option A" GridPane.columnIndex="1" />
-            <Label id="answer" prefHeight="40.0" prefWidth="10000.0" text="Answer Option B" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Label id="answer" prefHeight="40.0" prefWidth="10000.0" text="Answer Option C" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Label id="answer" prefHeight="40.0" prefWidth="10000.0" text="Answer Option D" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label id="answer" fx:id="a" prefHeight="40.0" prefWidth="10000.0" text="Answer Option A" GridPane.columnIndex="1" />
+            <Label id="answer" fx:id="b" prefHeight="40.0" prefWidth="10000.0" text="Answer Option B" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label id="answer" fx:id="c" prefHeight="40.0" prefWidth="10000.0" text="Answer Option C" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label id="answer" fx:id="d" prefHeight="40.0" prefWidth="10000.0" text="Answer Option D" GridPane.columnIndex="1" GridPane.rowIndex="3" />
          </children>
       </GridPane>
    </children>

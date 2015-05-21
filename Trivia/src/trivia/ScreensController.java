@@ -5,8 +5,11 @@
  */
 package trivia;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.animation.Timeline;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -37,8 +40,8 @@ public class ScreensController extends StackPane {
             myScreenController.setScreenParent(this);
             addScreen(name, loadScreen);
             return true;
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+        } catch (IOException ex) {
+            Logger.getLogger(ScreensController.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         }
     }
