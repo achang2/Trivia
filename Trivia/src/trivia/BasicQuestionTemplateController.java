@@ -203,7 +203,19 @@ public class BasicQuestionTemplateController implements Initializable, Controlle
         alert.setTitle("Correct!");
         alert.setHeaderText("Correct!");
         alert.setContentText("Congratulations! You got the question correct.");
-       Object q = null;
+       ButtonType buttonTypeNext = new ButtonType("Next Question");
+        ButtonType buttonTypeBack = new ButtonType("Back to Main");
+
+        alert.getButtonTypes().setAll(buttonTypeNext, buttonTypeBack);
+
+        Optional<ButtonType> result = alert.showAndWait();
+        ButtonType buttonTypeOne;
+        if (result.get() == buttonTypeNext){
+            // switch to the next question page
+        } else {
+            // switch to the main home page
+        }
+        /*Object q = null;
         Scanner myScan = new Scanner((Readable) q);
         ArrayList<String> ques = new ArrayList<>();
         scan(myScan, ques);
@@ -261,6 +273,7 @@ public class BasicQuestionTemplateController implements Initializable, Controlle
             secL = b;
             thirdL = c;
            }
+        */
     }
     public void incorrect(){
         Alert alert = new Alert(AlertType.CONFIRMATION);
