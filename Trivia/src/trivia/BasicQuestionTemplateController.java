@@ -212,6 +212,7 @@ public class BasicQuestionTemplateController implements Initializable, Controlle
         ButtonType buttonTypeOne;
         if (result.get() == buttonTypeNext){
             // switch to the next question page
+            Trivia.switchScene();
         } else {
             // switch to the main home page
         }
@@ -290,6 +291,7 @@ public class BasicQuestionTemplateController implements Initializable, Controlle
         ButtonType buttonTypeOne;
         if (result.get() == buttonTypeNext){
             // switch to the next question page
+            Trivia.switchScene();
         } else {
             // switch to the main home page
         }
