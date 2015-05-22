@@ -60,6 +60,8 @@ public class BasicQuestionTemplateController implements Initializable, Controlle
    @FXML
    private Button answerD; 
    
+   @FXML private Button Main;
+   
    Label labelC = null;
    
    int n;
@@ -170,6 +172,12 @@ public class BasicQuestionTemplateController implements Initializable, Controlle
      * @param button
      * @throws java.io.FileNotFoundException
      */
+    
+    @FXML
+    public void backToMain(ActionEvent button){
+        Trivia.backToMain();
+    }
+    
     @FXML
     public void check(ActionEvent button) throws FileNotFoundException{
         if(button.getSource() == answerA){
