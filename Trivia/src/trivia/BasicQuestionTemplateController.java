@@ -199,10 +199,11 @@ public class BasicQuestionTemplateController implements Initializable, Controlle
         }
     }
     public void correct() throws FileNotFoundException{
+        Trivia.counter++;
         Alert alert = new Alert(AlertType.CONFIRMATION);
         alert.setTitle("Correct!");
         alert.setHeaderText("Correct!");
-        alert.setContentText("Congratulations! You got the question correct.");
+        alert.setContentText("Congratulations! You got the question correct. You have correctly answered " + Trivia.counter + " questions in a row.");
        ButtonType buttonTypeNext = new ButtonType("Next Question");
         ButtonType buttonTypeBack = new ButtonType("Back to Main");
 
@@ -277,6 +278,7 @@ public class BasicQuestionTemplateController implements Initializable, Controlle
         */
     }
     public void incorrect(){
+        Trivia.counter = 0;
         Alert alert = new Alert(AlertType.CONFIRMATION);
         alert.setTitle("Incorrect.!");
         alert.setHeaderText("Incorrect.");
