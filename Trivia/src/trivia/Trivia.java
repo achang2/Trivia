@@ -155,6 +155,20 @@ public class Trivia extends Application {
         firstStage.setScene(scene); 
         firstStage.show();
      }
+    
+    public static void backToMain(){
+         ScreensController mainContainer;
+         mainContainer = new ScreensController();
+         mainContainer.loadScreen(Trivia.Home_Page,
+                                  Trivia.Home_Page_FXML);
+         mainContainer.setScreen(Trivia.Home_Page);
+         
+        Group root = new Group(); 
+        root.getChildren().addAll(mainContainer); 
+        Scene scene = new Scene(root); 
+        firstStage.setScene(scene); 
+        firstStage.show();
+     }
 
     /**
      * @param args the command line arguments
