@@ -216,6 +216,7 @@ public class BasicQuestionTemplateController implements Initializable, Controlle
             Trivia.switchScene();
         } else {
             // switch to the main home page
+            Trivia.backToMain();
         }
         /*Object q = null;
         Scanner myScan = new Scanner((Readable) q);
@@ -296,6 +297,7 @@ public class BasicQuestionTemplateController implements Initializable, Controlle
             Trivia.switchScene();
         } else {
             // switch to the main home page
+            Trivia.backToMain();
         }
     }
 }
