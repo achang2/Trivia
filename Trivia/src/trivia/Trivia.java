@@ -98,6 +98,7 @@ import javafx.stage.Stage;
  * @author Arthur
  */
 public class Trivia extends Application {
+    public static int counter = 0;
      
      public static final String Title_Page = "Title Page"; 
      public static final String Title_Page_FXML = "TitlePage.fxml"; 
