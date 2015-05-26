@@ -11,7 +11,7 @@
         <URL value="@allScenes.css" />
     </stylesheets>
     <children>
-      <Label layoutX="200.0" layoutY="40.0" prefHeight="50.0" prefWidth="200.0" text="Question #">
+      <Label fx:id="headLine" layoutX="200.0" layoutY="40.0" prefHeight="50.0" prefWidth="200.0" text="Question #">
          <font>
             <Font name="American Typewriter" size="36.0" />
          </font>
