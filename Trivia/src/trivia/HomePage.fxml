@@ -12,7 +12,7 @@
         <URL value="@allScenes.css" />
     </stylesheets>
     <children>
-      <Label fx:id="headLine" alignment="CENTER" layoutX="200.0" layoutY="40.0" prefHeight="50.0" prefWidth="200.0" text=" Home ">
+      <Label fx:id="headLine" alignment="CENTER" layoutX="200.0" layoutY="71.0" prefHeight="50.0" prefWidth="200.0" text=" Home ">
          <font>
             <Font name="American Typewriter" size="36.0" />
          </font>
@@ -28,7 +28,7 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="newGame" mnemonicParsing="false" onAction="#handleNewGame" prefHeight="500.0" prefWidth="500.0" text="New Game">
+            <Button fx:id="newGame" mnemonicParsing="false" onAction="#handleNewGame" prefHeight="500.0" prefWidth="500.0" text="New Game" GridPane.rowIndex="1">
                <font>
                   <Font size="16.0" />
                </font>
@@ -36,23 +36,7 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </GridPane.margin>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="500.0" prefWidth="500.0" text="Continue" GridPane.rowIndex="1">
-               <font>
-                  <Font size="16.0" />
-               </font>
-               <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-               </GridPane.margin>
-            </Button>
-            <Button mnemonicParsing="false" prefHeight="500.0" prefWidth="500.0" text="Profile" GridPane.rowIndex="2">
-               <font>
-                  <Font size="16.0" />
-               </font>
-               <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-               </GridPane.margin>
-            </Button>
-            <Button mnemonicParsing="false" prefHeight="500.0" prefWidth="500.0" text="Back to Main" GridPane.rowIndex="3">
+            <Button mnemonicParsing="false" prefHeight="500.0" prefWidth="500.0" text="Continue" GridPane.rowIndex="2">
                <font>
                   <Font size="16.0" />
                </font>
