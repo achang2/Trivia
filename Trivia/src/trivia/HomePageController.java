@@ -22,9 +22,7 @@ import javafx.scene.control.Button;
  *
  * @author Arthur
  */
-public class HomePageController implements Initializable, ControlledScreen {
-    
-    ScreensController myController;
+public class HomePageController extends ControlledScreen implements Initializable {
     
     @FXML
     private Label question;
@@ -47,7 +45,7 @@ public class HomePageController implements Initializable, ControlledScreen {
     
     @FXML
     private void handleNewGame(ActionEvent event) {
-        Trivia.switchScene();
+        Trivia.switchToModes();
     }
            
            
@@ -62,11 +60,6 @@ public class HomePageController implements Initializable, ControlledScreen {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }
-    
-    @Override
-    public void setScreenParent(ScreensController screenParent){ 
-        myController = screenParent; 
-    } 
     
 }    
 

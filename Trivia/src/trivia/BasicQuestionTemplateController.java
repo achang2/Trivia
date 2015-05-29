@@ -29,9 +29,8 @@ import javafx.scene.control.Label;
  *
  * @author Arthur
  */
-public class BasicQuestionTemplateController implements Initializable, ControlledScreen {
+public class BasicQuestionTemplateController extends ControlledScreen implements Initializable {
     
-    ScreensController myController;
     
    @FXML 
    private Label questions;
@@ -72,11 +71,11 @@ public class BasicQuestionTemplateController implements Initializable, Controlle
      * @param rb
      * @author Alec*/
     
-    @Override
+    /*@Override
     public void setScreenParent(ScreensController screenParent){ 
         myController = screenParent; 
-    }
-   @Override
+    }*/
+    @Override
     public void initialize(URL url, ResourceBundle rb) {
         /**
          * @author Alec
