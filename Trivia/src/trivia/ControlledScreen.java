@@ -9,7 +9,10 @@ package trivia;
  *
  * @author Shoshana
  */
-public interface ControlledScreen {
+public abstract class ControlledScreen {
     //This method will allow the injection of the Parent ScreenPane 
-     public void setScreenParent(ScreensController screenPage); 
+    protected ScreensController myController;
+    public void setScreenParent(ScreensController screenParent){ 
+        myController = screenParent; 
+    } 
 }

@@ -95,7 +95,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author Arthur
+ * @author Shoshana
  */
 public class Trivia extends Application {
     public static int counter = 0;
@@ -108,7 +108,10 @@ public class Trivia extends Application {
      public static final String ROULETTE_SCREEN_FXML = "roulette.fxml"; 
      public static final String Basic_Question_Template = "Basic Question Template";
      public static final String Basic_Question_Template_FXML = "BasicQuestionTemplate.fxml";
+     public static final String Modes = "Modes Page";
+     public static final String Modes_FXML = "Modes2.fxml";
      public static Stage firstStage;
+
     @Override
      public void start(Stage primaryStage) throws Exception { 
        firstStage = primaryStage;
@@ -169,6 +172,21 @@ public class Trivia extends Application {
         firstStage.setScene(scene); 
         firstStage.show();
      }
+    
+    
+    public static void switchToModes(){
+        ScreensController mainContainer; 
+        mainContainer = new ScreensController();
+        mainContainer.loadScreen(Trivia.Modes,
+                                 Trivia.Modes_FXML);
+        mainContainer.setScreen(Trivia.Modes);
+        
+        Group root = new Group(); 
+        root.getChildren().addAll(mainContainer); 
+        Scene scene = new Scene(root); 
+        firstStage.setScene(scene); 
+        firstStage.show();
+    }
 
     /**
      * @param args the command line arguments

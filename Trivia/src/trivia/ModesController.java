@@ -10,18 +10,12 @@ import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
 
 /**
- * FXML Controller class
- *
- * @author CharlieSowerby
+ * @author Shoshana
  */
-public class ModesController implements Initializable {
-
-    /**
-     * Initializes the controller class.
-     */
+public class ModesController extends ControlledScreen implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
     
-}
+}    
