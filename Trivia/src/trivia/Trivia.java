@@ -99,6 +99,7 @@ import javafx.stage.Stage;
  */
 public class Trivia extends Application {
     public static int counter = 0;
+    public static int counterTimed = 0;
      
      public static final String Title_Page = "Title Page"; 
      public static final String Title_Page_FXML = "TitlePage.fxml"; 
@@ -110,6 +111,8 @@ public class Trivia extends Application {
      public static final String Basic_Question_Template_FXML = "BasicQuestionTemplate.fxml";
      public static final String Modes = "Modes Page";
      public static final String Modes_FXML = "Modes2.fxml";
+     public static final String Timed = "Timed Page";
+     public static final String Timed_FXML = "Timed.fxml";
      public static Stage firstStage;
 
     @Override
@@ -180,6 +183,20 @@ public class Trivia extends Application {
         mainContainer.loadScreen(Trivia.Modes,
                                  Trivia.Modes_FXML);
         mainContainer.setScreen(Trivia.Modes);
+        
+        Group root = new Group(); 
+        root.getChildren().addAll(mainContainer); 
+        Scene scene = new Scene(root); 
+        firstStage.setScene(scene); 
+        firstStage.show();
+    }
+    
+    public static void switchToTimed(){
+        ScreensController mainContainer; 
+        mainContainer = new ScreensController();
+        mainContainer.loadScreen(Trivia.Timed,
+                                 Trivia.Timed_FXML);
+        mainContainer.setScreen(Trivia.Timed);
         
         Group root = new Group(); 
         root.getChildren().addAll(mainContainer); 
