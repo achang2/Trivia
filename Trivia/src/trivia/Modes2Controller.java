@@ -19,15 +19,37 @@ import javafx.scene.control.Label;
  * @author Shoshana
  */
 public class Modes2Controller extends ControlledScreen implements Initializable {
+    private static long startTime;
+    public static long endTime;
+    
+    
     @FXML
     private Label headLine;
     
     @FXML
-    private Button Classic; 
+    private Button Classic;
+    
+    @FXML
+    private Button Timed;
     
     @FXML
     private void handleNewMode(ActionEvent event) {
         Trivia.switchScene();
+    }
+    
+    @FXML
+    private void handleNewTimed(ActionEvent event) {
+        startTime = System.currentTimeMillis();
+        endTime = startTime + 60000;
+        Trivia.switchToTimed();
+        
+    }
+    
+    public static void newTimed() {
+        startTime = System.currentTimeMillis();
+        endTime = startTime + 60000;
+        Trivia.switchToTimed();
+        
     }
 
     /**
