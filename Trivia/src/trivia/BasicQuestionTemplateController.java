@@ -119,7 +119,7 @@ public class BasicQuestionTemplateController extends ControlledScreen implements
            scan(third, wrong3);
            
            Random rand = new Random();
-           int i = rand.nextInt(ques.size() - 1);
+           int i = rand.nextInt(ques.size());
            String newQ = ques.get(i);
            String newC = correctAnswers.get(i);
            String newA1 = wrong1.get(i);
