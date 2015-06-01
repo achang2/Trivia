@@ -207,10 +207,13 @@ public class BasicQuestionTemplateController extends ControlledScreen implements
     }
     public void correct() throws FileNotFoundException{
         Trivia.counter++;
+        if (Trivia.counter>Trivia.maxInARow){
+            Trivia.maxInARow = Trivia.counter;
+        }
         Alert alert = new Alert(AlertType.CONFIRMATION);
         alert.setTitle("Correct!");
         alert.setHeaderText("Correct!");
-        alert.setContentText("Congratulations! You got the question correct. You have correctly answered " + Trivia.counter + " questions in a row.");
+        alert.setContentText("Congratulations! You got the question correct. You have correctly answered " + Trivia.counter + " questions in a row. The most number of consecutive questions you have answered correctly is " + Trivia.maxInARow + ".");
        ButtonType buttonTypeNext = new ButtonType("Next Question");
         ButtonType buttonTypeBack = new ButtonType("Back to Main");
 
@@ -290,7 +293,7 @@ public class BasicQuestionTemplateController extends ControlledScreen implements
         Alert alert = new Alert(AlertType.CONFIRMATION);
         alert.setTitle("Incorrect.!");
         alert.setHeaderText("Incorrect.");
-        alert.setContentText("I'm sorry, but that was the wrong answer.");
+        alert.setContentText("I'm sorry, but that was the wrong answer. The most number of consecutive questions you have answered correctly is " + Trivia.maxInARow + ".");
 
         ButtonType buttonTypeNext = new ButtonType("Next Question");
         ButtonType buttonTypeBack = new ButtonType("Back to Main");

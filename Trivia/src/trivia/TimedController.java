@@ -212,10 +212,13 @@ public class TimedController extends ControlledScreen implements Initializable {
     }
     
     public static void stop(){
+        if (Trivia.counterTimed>Trivia.maxTimed){
+            Trivia.maxTimed = Trivia.counterTimed;
+        }
         Alert alert = new Alert(AlertType.CONFIRMATION);
         alert.setTitle("Time's Up!");
         alert.setHeaderText("Time'sUp");
-        alert.setContentText("Time's Up! You have correctly answered " + Trivia.counterTimed + ".");
+        alert.setContentText("Time's Up! You have correctly answered " + Trivia.counterTimed + ". The most number of questions you have answered correctly in a minute is " + Trivia.maxInARow + ".");
        ButtonType buttonTypeNext = new ButtonType("Play Again");
         ButtonType buttonTypeBack = new ButtonType("Back to Main");
 

@@ -98,6 +98,8 @@ import javafx.stage.Stage;
  * @author Shoshana
  */
 public class Trivia extends Application {
+    public static int maxInARow = 0;
+    public static int maxTimed = 0;
     public static int counter = 0;
     public static int counterTimed = 0;
      
