@@ -28,4 +28,5 @@ In Star Trek, what planet is Spock from?
 Who is Black Bolt's wife?
 What is the Pythagorean Theorem?
 What is the next prime number after 7?
-What comes after a trillion?
+What comes after a trillion? 
+What comes after 34 in a Fibonacci sequence?
