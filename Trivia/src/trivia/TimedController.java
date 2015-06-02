@@ -6,8 +6,14 @@ package trivia;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import static java.nio.file.StandardOpenOption.CREATE_NEW;
 import java.util.ArrayList;
 import java.util.Optional;
 import java.util.Random;
@@ -112,7 +118,7 @@ public class TimedController extends ControlledScreen implements Initializable {
            scan(third, wrong3);
            
            Random rand = new Random();
-           int i = rand.nextInt(ques.size() - 1);
+           int i = rand.nextInt(ques.size());
            String newQ = ques.get(i);
            String newC = correctAnswers.get(i);
            String newA1 = wrong1.get(i);
@@ -178,7 +184,7 @@ public class TimedController extends ControlledScreen implements Initializable {
     }
     
     @FXML
-    public void check(ActionEvent button) throws FileNotFoundException{
+    public void check(ActionEvent button) throws FileNotFoundException, IOException{
         if (System.currentTimeMillis()<=Modes2Controller.endTime){    
             if(button.getSource() == answerA){
                     if(n==0){
@@ -211,14 +217,29 @@ public class TimedController extends ControlledScreen implements Initializable {
         }
     }
     
-    public static void stop(){
-        if (Trivia.counterTimed>Trivia.maxTimed){
-            Trivia.maxTimed = Trivia.counterTimed;
+    public static void stop() throws IOException{
+        Integer temp = 0;
+        try{
+            Path p = Paths.get("TimedHighScore.txt");
+            InputStream q = Files.newInputStream(p);
+            Scanner highScore = new Scanner(q);
+            temp = q.read();
+            if (Trivia.counterTimed>temp){
+                temp = Trivia.counterTimed;
+                OutputStream newhighScore = Files.newOutputStream(p);
+                newhighScore.write(temp); 
+            }
+        }
+        catch(IOException e){
+            Path p = Paths.get("TimedHighScore.txt");
+            temp = Trivia.counterTimed;
+            OutputStream newhighScore = Files.newOutputStream(p, CREATE_NEW);
+            newhighScore.write(temp);
         }
         Alert alert = new Alert(AlertType.CONFIRMATION);
         alert.setTitle("Time's Up!");
         alert.setHeaderText("Time'sUp");
-        alert.setContentText("Time's Up! You have correctly answered " + Trivia.counterTimed + ". The most number of questions you have answered correctly in a minute is " + Trivia.maxInARow + ".");
+        alert.setContentText("Time's Up! You have correctly answered " + Trivia.counterTimed + ". The most number of questions you have answered correctly in a minute is " + temp + ".");
        ButtonType buttonTypeNext = new ButtonType("Play Again");
         ButtonType buttonTypeBack = new ButtonType("Back to Main");
 

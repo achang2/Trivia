@@ -6,9 +6,16 @@ package trivia;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import static java.nio.file.StandardOpenOption.CREATE_NEW;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Optional;
 import java.util.Random;
 import java.util.ResourceBundle;
@@ -112,7 +119,7 @@ public class BasicQuestionTemplateController extends ControlledScreen implements
            scan(third, wrong3);
            
            Random rand = new Random();
-           int i = rand.nextInt(ques.size() - 1);
+           int i = rand.nextInt(ques.size());
            String newQ = ques.get(i);
            String newC = correctAnswers.get(i);
            String newA1 = wrong1.get(i);
@@ -159,8 +166,7 @@ public class BasicQuestionTemplateController extends ControlledScreen implements
                String questions = myScan.nextLine();
                ques.add(questions);
            }
-    }    
-
+    }
         
     
 
@@ -178,7 +184,7 @@ public class BasicQuestionTemplateController extends ControlledScreen implements
     }
     
     @FXML
-    public void check(ActionEvent button) throws FileNotFoundException{
+    public void check(ActionEvent button) throws FileNotFoundException, IOException{
         if(button.getSource() == answerA){
             if(n==0){
                this.correct(); 
@@ -205,15 +211,31 @@ public class BasicQuestionTemplateController extends ControlledScreen implements
             }
         }
     }
-    public void correct() throws FileNotFoundException{
+    public void correct() throws FileNotFoundException, IOException{
         Trivia.counter++;
-        if (Trivia.counter>Trivia.maxInARow){
-            Trivia.maxInARow = Trivia.counter;
+        Integer temp = 0;
+        try{
+            Path p = Paths.get("HighScore.txt");
+            InputStream q = Files.newInputStream(p);
+            Scanner highScore = new Scanner(q);
+            temp = q.read();
+            if (Trivia.counter>temp){
+                temp = Trivia.counter;
+                Trivia.maxInARow = temp;
+                OutputStream newhighScore = Files.newOutputStream(p);
+                newhighScore.write(temp); 
+            }
+        }
+        catch(IOException e){
+            Path p = Paths.get("HighScore.txt");
+            temp = Trivia.counter;
+            OutputStream newhighScore = Files.newOutputStream(p, CREATE_NEW);
+            newhighScore.write(temp);
         }
         Alert alert = new Alert(AlertType.CONFIRMATION);
         alert.setTitle("Correct!");
         alert.setHeaderText("Correct!");
-        alert.setContentText("Congratulations! You got the question correct. You have correctly answered " + Trivia.counter + " questions in a row. The most number of consecutive questions you have answered correctly is " + Trivia.maxInARow + ".");
+        alert.setContentText("Congratulations! You got the question correct. You have correctly answered " + Trivia.counter + " questions in a row. The most number of consecutive questions you have answered correctly is " + temp + ".");
        ButtonType buttonTypeNext = new ButtonType("Next Question");
         ButtonType buttonTypeBack = new ButtonType("Back to Main");
 
@@ -288,7 +310,7 @@ public class BasicQuestionTemplateController extends ControlledScreen implements
            }
         */
     }
-    public void incorrect(){
+    public void incorrect() throws IOException{
         Trivia.counter = 0;
         Alert alert = new Alert(AlertType.CONFIRMATION);
         alert.setTitle("Incorrect.!");
