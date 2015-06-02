@@ -109,8 +109,8 @@ public class Trivia extends Application {
      public static final String Basic_Question_Template = "Basic Question Template";
      public static final String Basic_Question_Template_FXML = "BasicQuestionTemplate.fxml";
      public static final String Modes = "Modes Page";
-     public static final String Modes_FXML = "Modes2.fxml";
-     public static Stage firstStage;
+     public static final String Modes_FXML = "Modes2.fxml";    
+    public static Stage firstStage;
 
     @Override
      public void start(Stage primaryStage) throws Exception { 
@@ -187,6 +187,7 @@ public class Trivia extends Application {
         firstStage.setScene(scene); 
         firstStage.show();
     }
+    
 
     /**
      * @param args the command line arguments
