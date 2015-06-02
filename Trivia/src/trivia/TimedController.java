@@ -15,7 +15,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import static java.nio.file.StandardOpenOption.CREATE_NEW;
 import java.util.ArrayList;
-import java.util.InputMismatchException;
 import java.util.Optional;
 import java.util.Random;
 import java.util.ResourceBundle;
@@ -36,7 +35,7 @@ import javafx.scene.control.Label;
  *
  * @author Arthur
  */
-public class BasicQuestionTemplateController extends ControlledScreen implements Initializable {
+public class TimedController extends ControlledScreen implements Initializable {
     
     
    @FXML 
@@ -157,7 +156,7 @@ public class BasicQuestionTemplateController extends ControlledScreen implements
            
  
     }
-    public BasicQuestionTemplateController() {
+    public TimedController() {
         this.w2 = new File("Wrong Answers 2.txt");
     }
 
@@ -166,7 +165,8 @@ public class BasicQuestionTemplateController extends ControlledScreen implements
                String questions = myScan.nextLine();
                ques.add(questions);
            }
-    }
+    }    
+
         
     
 
@@ -185,58 +185,62 @@ public class BasicQuestionTemplateController extends ControlledScreen implements
     
     @FXML
     public void check(ActionEvent button) throws FileNotFoundException, IOException{
-        if(button.getSource() == answerA){
-            if(n==0){
-               this.correct(); 
-            }else{
-               this.incorrect(); 
-            }
-        }else if(button.getSource() == answerB){
-            if(n==1){
-               this.correct();
-            }else{
-                this.incorrect();
-            }
-        }else if(button.getSource() == answerC){
-            if(n==2){
-                this.correct();
-            }else{
-                this.incorrect();
-            }
-        }else if(button.getSource() == answerD){
-            if(n==3){
-               this.correct(); 
-            }else{
-               this.incorrect(); 
-            }
+        if (System.currentTimeMillis()<=Modes2Controller.endTime){    
+            if(button.getSource() == answerA){
+                    if(n==0){
+                       this.correct(); 
+                    }else{
+                       this.incorrect(); 
+                    }
+                }else if(button.getSource() == answerB){
+                    if(n==1){
+                       this.correct();
+                    }else{
+                        this.incorrect();
+                    }
+                }else if(button.getSource() == answerC){
+                    if(n==2){
+                        this.correct();
+                    }else{
+                        this.incorrect();
+                    }
+                }else if(button.getSource() == answerD){
+                    if(n==3){
+                       this.correct(); 
+                    }else{
+                       this.incorrect(); 
+                    }
+                }
+        }
+        else{
+            stop();
         }
     }
-    public void correct() throws FileNotFoundException, IOException{
-        Trivia.counter++;
+    
+    public static void stop() throws IOException{
         Integer temp = 0;
         try{
-            Path p = Paths.get("HighScore.txt");
+            Path p = Paths.get("TimedHighScore.txt");
             InputStream q = Files.newInputStream(p);
             Scanner highScore = new Scanner(q);
             temp = q.read();
-            if (Trivia.counter>temp){
-                temp = Trivia.counter;
-                Trivia.maxInARow = temp;
+            if (Trivia.counterTimed>temp){
+                temp = Trivia.counterTimed;
                 OutputStream newhighScore = Files.newOutputStream(p);
                 newhighScore.write(temp); 
             }
         }
         catch(IOException e){
-            Path p = Paths.get("HighScore.txt");
-            temp = Trivia.counter;
+            Path p = Paths.get("TimedHighScore.txt");
+            temp = Trivia.counterTimed;
             OutputStream newhighScore = Files.newOutputStream(p, CREATE_NEW);
             newhighScore.write(temp);
         }
         Alert alert = new Alert(AlertType.CONFIRMATION);
-        alert.setTitle("Correct!");
-        alert.setHeaderText("Correct!");
-        alert.setContentText("Congratulations! You got the question correct. You have correctly answered " + Trivia.counter + " questions in a row. The most number of consecutive questions you have answered correctly is " + temp + ".");
-       ButtonType buttonTypeNext = new ButtonType("Next Question");
+        alert.setTitle("Time's Up!");
+        alert.setHeaderText("Time'sUp");
+        alert.setContentText("Time's Up! You have correctly answered " + Trivia.counterTimed + ". The most number of questions you have answered correctly in a minute is " + temp + ".");
+       ButtonType buttonTypeNext = new ButtonType("Play Again");
         ButtonType buttonTypeBack = new ButtonType("Back to Main");
 
         alert.getButtonTypes().setAll(buttonTypeNext, buttonTypeBack);
@@ -245,8 +249,33 @@ public class BasicQuestionTemplateController extends ControlledScreen implements
         ButtonType buttonTypeOne;
         if (result.get() == buttonTypeNext){
             // switch to the next question page
-            Trivia.switchScene();
+        Trivia.counterTimed++;    
+        Modes2Controller.newTimed();
         } else {
+            // switch to the main home page
+            Trivia.backToMain();
+        }
+        Trivia.counterTimed = 0;
+    }
+    
+    public void correct() throws FileNotFoundException{
+        /*Trivia.counter++;
+        Alert alert = new Alert(AlertType.CONFIRMATION);
+        alert.setTitle("Correct!");
+        alert.setHeaderText("Correct!");
+        alert.setContentText("Congratulations! You got the question correct. You have correctly answered " + Trivia.counter + " questions in a row.");
+       ButtonType buttonTypeNext = new ButtonType("Next Question");
+        ButtonType buttonTypeBack = new ButtonType("Back to Main");
+
+        alert.getButtonTypes().setAll(buttonTypeNext, buttonTypeBack);
+
+        Optional<ButtonType> result = alert.showAndWait();
+        ButtonType buttonTypeOne;
+        if (result.get() == buttonTypeNext){*/
+            // switch to the next question page
+        Trivia.counterTimed++;    
+        Trivia.switchToTimed();
+        /*} else {
             // switch to the main home page
             Trivia.backToMain();
         }
@@ -310,12 +339,12 @@ public class BasicQuestionTemplateController extends ControlledScreen implements
            }
         */
     }
-    public void incorrect() throws IOException{
-        Trivia.counter = 0;
+    public void incorrect(){
+        /*Trivia.counter = 0;
         Alert alert = new Alert(AlertType.CONFIRMATION);
         alert.setTitle("Incorrect.!");
         alert.setHeaderText("Incorrect.");
-        alert.setContentText("I'm sorry, but that was the wrong answer. The most number of consecutive questions you have answered correctly is " + Trivia.maxInARow + ".");
+        alert.setContentText("I'm sorry, but that was the wrong answer.");
 
         ButtonType buttonTypeNext = new ButtonType("Next Question");
         ButtonType buttonTypeBack = new ButtonType("Back to Main");
@@ -326,11 +355,11 @@ public class BasicQuestionTemplateController extends ControlledScreen implements
         ButtonType buttonTypeOne;
         if (result.get() == buttonTypeNext){
             // switch to the next question page
-            Trivia.switchScene();
-        } else {
+            */Trivia.switchToTimed();
+        /*} else {
             // switch to the main home page
             Trivia.backToMain();
-        }
+        */
     }
 }
     
