@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import java.net.*?>
@@ -13,26 +14,28 @@
         <URL value="@allScenes.css" />
     </stylesheets>
     <children>
-      <GridPane layoutX="100.0" layoutY="150.0" prefHeight="200.0" prefWidth="400.0">
+      <Label fx:id="headLine" alignment="CENTER" layoutX="150.0" layoutY="50.0" prefHeight="80.0" prefWidth="300.0" text="Choose the Mode of Play" />
+      <GridPane layoutX="100.0" layoutY="180.0" prefHeight="150.0" prefWidth="400.0">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="235.0" minWidth="10.0" percentWidth="50.0" prefWidth="235.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="165.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints maxHeight="161.0" minHeight="0.0" percentHeight="50.0" prefHeight="161.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="161.0" minHeight="0.0" percentHeight="50.0" prefHeight="161.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="61.0" minHeight="0.0" percentHeight="50.0" prefHeight="0.0" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="Classic" mnemonicParsing="false" onAction="#handleNewMode" prefHeight="10000.0" prefWidth="10000.0" text="Classic" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <Button fx:id="Classic" mnemonicParsing="false" onAction="#handleNewMode" prefHeight="1000.0" prefWidth="1000.0" text="Classic">
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
                <GridPane.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </GridPane.margin>
+               <font>
+                  <Font size="24.0" />
+               </font>
             </Button>
-            <Button fx:id="Timed" mnemonicParsing="false" onAction="#handleNewTimed" prefHeight="10000.0" prefWidth="10000.0" text="Timed" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <Button fx:id="Timed" mnemonicParsing="false" onAction="#handleNewTimed" prefHeight="1000.0" prefWidth="1000.0" text="Timed" GridPane.rowIndex="1">
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
@@ -42,6 +45,5 @@
             </Button>
          </children>
       </GridPane>
-      <Label fx:id="headLine" alignment="CENTER" layoutX="150.0" layoutY="60.0" prefHeight="50.0" prefWidth="300.0" text="Choose the Mode of Play" />
    </children>
 </Pane>
